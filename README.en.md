@@ -2,13 +2,13 @@
 
 [繁體中文](README.md) ｜ **English** ｜ [日本語](README.ja.md)
 
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-Buy%20me%20a%20coffee-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/killnopig)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Buy%20me%20a%20coffee-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/jjptt1980)
 
 A single-page web app for your phone that records weekly injection doses, injection sites, weight and related health measurements, and draws charts. Everything lives in one `index.html` file. No server is needed.
 
-**Use it online:** https://killnopig.github.io/dose-tracker-sync/
+**Use it online:** https://jjptt1980.github.io/dose-tracker-sync/
 
-> This is the "Sync Edition", an independent project that grew out of [dose-tracker](https://github.com/killnopig/dose-tracker) (the stable 1.2 release). It adds blood pressure and body composition, Omron CSV and Health Connect import, chart screenshots and a text summary, and chart tooltips. Data and cloud backups of the two projects are completely separate.
+> This is the "Sync Edition", an independent project that grew out of [dose-tracker](https://github.com/JJptt1980/dose-tracker) (the stable 1.2 release). It adds blood pressure and body composition, Omron CSV and Health Connect import, chart screenshots and a text summary, and chart tooltips. Data and cloud backups of the two projects are completely separate.
 
 > This app is a personal logging and trend-viewing tool. It is not a medical device and gives no diagnosis, treatment or dosing advice. Please read the Disclaimer below first.
 
@@ -43,14 +43,15 @@ Always open it the same way, because data is stored per browser (see below).
 
 ## Android APK (optional)
 
-You can also install the Android APK. Download the latest `dose-tracker-sync-v2.0.0.apk` from [Releases](https://github.com/killnopig/dose-tracker-sync/releases).
+You can also install the Android APK. Download the latest `dose-tracker-sync-v2.0.1.apk` from [Releases](https://github.com/JJptt1980/dose-tracker-sync/releases).
 
-- The APK is only a shell (Capacitor) that loads `https://killnopig.github.io/dose-tracker-sync/`. The content updates automatically when the website updates, so you do not need to reinstall. The real version is the one shown next to the title at the top of the app.
+- The APK is only a shell (Capacitor) that loads `https://jjptt1980.github.io/dose-tracker-sync/`. The content updates automatically when the website updates, so you do not need to reinstall. The real version is the one shown next to the title at the top of the app.
 - An internet connection is required to open it.
 - Data is stored in the APK's built-in browser, separate from the Chrome web version. Uninstalling the app or clearing its data erases your records, so back up regularly.
 - Google Drive backup has been tested on the author's phone only.
 - To move from the Chrome version to the APK, connect both to the same Google account and let Drive load the data, or use backup text.
 - This build is signed with a debug key and is for personal sideloading only. You need to allow "Install unknown apps". Future APK updates must use the same signing key, otherwise you must uninstall first and your records will be lost.
+- Moving from 2.0.0 to 2.0.1: the website moved to a new address, so 2.0.0 no longer opens. 2.0.1 also has a new package name, so it cannot be installed over 2.0.0 and both apps will appear. Connect Google Drive in 2.0.1 to load your data, check it, then uninstall the old app. If you never turned on Drive backup in 2.0.0, do not uninstall it yet. You also need to allow Health Connect access again in the new app.
 
 ## Health Connect sync (Android APK)
 
@@ -142,8 +143,8 @@ residual = Σ dose × 2^(−days elapsed ÷ (half-life hours ÷ 24))
 
 ## Relation to the stable 1.2 release
 
-- The stable 1.2 release stays at [dose-tracker](https://github.com/killnopig/dose-tracker) (`https://killnopig.github.io/dose-tracker/`) and receives no new features.
-- The Sync Edition is a separate project (`https://killnopig.github.io/dose-tracker-sync/`), with versions starting at 2.0.0.
+- The stable 1.2 release stays at [dose-tracker](https://github.com/JJptt1980/dose-tracker) (`https://jjptt1980.github.io/dose-tracker/`) and receives no new features.
+- The Sync Edition is a separate project (`https://jjptt1980.github.io/dose-tracker-sync/`), with versions starting at 2.0.0.
 - Both live under the same domain, so the Sync Edition always uses its own local storage key (`dosetrack-v1-sync`) and its own Drive backup file (`dose-tracker-sync.json`) and never reads or writes 1.2 data.
 - The privacy policy shown on the Google sign-in and Health Connect permission screens is the one in the 1.2 project (`privacy.html`).
 

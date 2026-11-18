@@ -2,13 +2,13 @@
 
 **繁體中文** ｜ [English](README.en.md) ｜ [日本語](README.ja.md)
 
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-%E8%AB%8B%E6%88%91%E5%96%9D%E6%9D%AF%E5%92%96%E5%95%A1-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/killnopig)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-%E8%AB%8B%E6%88%91%E5%96%9D%E6%9D%AF%E5%92%96%E5%95%A1-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/jjptt1980)
 
 一個在手機上使用的單頁網頁 app，用來記錄每週注射劑量、注射部位與體重，並畫出圖表。所有功能都在一個 `index.html` 檔案裡，不需要安裝、不需要伺服器。
 
-**線上使用：** https://killnopig.github.io/dose-tracker-sync/
+**線上使用：** https://jjptt1980.github.io/dose-tracker-sync/
 
-> 這是「同步版」，由 [dose-tracker](https://github.com/killnopig/dose-tracker)（1.2 穩定版）延伸出來的獨立專案，新增血壓與體組成、Omron CSV 與 Health Connect 匯入、圖表截圖與數據摘要、圖表互動提示等功能。兩個專案的資料與雲端備份檔完全分開，互不影響。
+> 這是「同步版」，由 [dose-tracker](https://github.com/JJptt1980/dose-tracker)（1.2 穩定版）延伸出來的獨立專案，新增血壓與體組成、Omron CSV 與 Health Connect 匯入、圖表截圖與數據摘要、圖表互動提示等功能。兩個專案的資料與雲端備份檔完全分開，互不影響。
 
 > 本 app 是個人記錄與趨勢檢視工具，不是醫療器材，不提供診斷、治療或用藥建議。請先閱讀下方〈免責聲明〉。
 
@@ -39,14 +39,15 @@
 
 ## Android APK（選用）
 
-除了「加到主畫面」，也可以安裝 Android APK：到 [Releases](https://github.com/killnopig/dose-tracker-sync/releases) 下載最新的 `dose-tracker-sync-v2.0.0.apk`。
+除了「加到主畫面」，也可以安裝 Android APK：到 [Releases](https://github.com/JJptt1980/dose-tracker-sync/releases) 下載最新的 `dose-tracker-sync-v2.0.1.apk`。
 
-- APK 只是載入 `https://killnopig.github.io/dose-tracker-sync/` 的外殼（Capacitor）。網站更新時 app 內容會自動跟著更新，不需要重新安裝；實際版本以 app 最上方標題旁顯示的版本號為準。
+- APK 只是載入 `https://jjptt1980.github.io/dose-tracker-sync/` 的外殼（Capacitor）。網站更新時 app 內容會自動跟著更新，不需要重新安裝；實際版本以 app 最上方標題旁顯示的版本號為準。
 - 需要網路才能開啟，沒有網路時無法載入。
 - 資料存在 APK 內嵌的瀏覽器，與 Chrome 網頁版分開。解除安裝或清除 app 資料會遺失記錄，請定期在「設定」按「產生備份文字」另存。
 - Google Drive 備份在作者的手機上測試可正常使用，其他機型未測。
 - 從 Chrome 網頁版換到 APK：在網頁版「產生備份文字」，到 APK「從文字還原」；或兩邊連線同一個 Google 帳號，由 Drive 載入。
 - 此版本使用 debug 簽章，僅供個人側載。安裝時需允許「安裝未知應用程式」。之後更新 APK 必須使用同一把簽章金鑰，否則要先解除安裝，記錄會一併消失。
+- 從 2.0.0 換到 2.0.1：網站搬到新網址，舊版 2.0.0 已經無法開啟。2.0.1 的套件名稱也改了，無法直接覆蓋安裝，新舊版會同時出現。請在 2.0.1 連線 Google Drive 載入資料，確認無誤後再解除安裝舊版；舊版沒有開過 Drive 備份的話，請先不要解除安裝。Health Connect 的授權也要在新版重新允許一次。
 
 ## Health Connect 同步（Android APK）
 
@@ -78,7 +79,7 @@
    外掛本身只預先宣告體重、心率等基本項目，血壓、體脂、基礎代謝要自己加。
 3. 編輯 `android/app/src/main/res/values/strings.xml`，在 `<resources>` 裡加入隱私權政策連結（Health Connect 授權畫面會用到）：
    ```xml
-   <string name="health_connect_privacy_policy_url">https://killnopig.github.io/dose-tracker/privacy.html</string>
+   <string name="health_connect_privacy_policy_url">https://jjptt1980.github.io/dose-tracker/privacy.html</string>
    ```
 4. 如果編譯時出現 minSdk 相關錯誤，把 `android/variables.gradle` 的 `minSdkVersion` 改成 26 以上。
 5. 把 `android/app/build.gradle` 的 `versionCode` 加 1、`versionName` 改成新版本，才能覆蓋安裝舊版。
@@ -106,7 +107,7 @@
 1. 到 [Google Cloud Console](https://console.cloud.google.com/) 建立專案。
 2. 啟用 **Google Drive API**。
 3. 設定 OAuth 同意畫面：類型選「外部」，加入範圍 `https://www.googleapis.com/auth/drive.appdata`。
-4. 在「憑證」建立 **OAuth 用戶端 ID**，類型選「網頁應用程式」，已授權的 JavaScript 來源填你的網站來源，例如 `https://killnopig.github.io`（不含路徑）。
+4. 在「憑證」建立 **OAuth 用戶端 ID**，類型選「網頁應用程式」，已授權的 JavaScript 來源填你的網站來源，例如 `https://jjptt1980.github.io`（不含路徑）。
 5. 把產生的用戶端 ID 貼到 `index.html` 裡的 `GOOGLE_CLIENT_ID`。
 6. 應用程式若停在「測試」狀態，只有你加入的測試使用者能登入；要開放給所有人，需發布為「正式版」。用戶端 ID 本身是公開資訊，可以放在公開 repository。
 
@@ -318,8 +319,8 @@
 
 ## 與 1.2 穩定版的關係
 
-- 1.2 穩定版維持在 [dose-tracker](https://github.com/killnopig/dose-tracker)，網址 `https://killnopig.github.io/dose-tracker/`，不再加入新功能。
-- 同步版是獨立專案，網址 `https://killnopig.github.io/dose-tracker-sync/`，版本號從 2.0.0 開始。
+- 1.2 穩定版維持在 [dose-tracker](https://github.com/JJptt1980/dose-tracker)，網址 `https://jjptt1980.github.io/dose-tracker/`，不再加入新功能。
+- 同步版是獨立專案，網址 `https://jjptt1980.github.io/dose-tracker-sync/`，版本號從 2.0.0 開始。
 - 兩者在同一個網域下，所以同步版固定使用自己的本機儲存鍵（`dosetrack-v1-sync`）與 Google Drive 備份檔（`dose-tracker-sync.json`），不會讀寫 1.2 版的資料。
 - 從 1.2 版或舊測試版搬資料：到同步版「設定」→ Google Drive，連線 Google Drive 後，若同步版自己的備份是空的、本機也沒有資料，會自動從舊測試版或 1.2 版的雲端備份載入（挑較新的一份）。這是複製，原本版本的備份不受影響。
 - Google 登入同意畫面與 Health Connect 授權畫面的隱私權政策，沿用 1.2 專案的 `privacy.html`。

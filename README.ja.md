@@ -2,13 +2,13 @@
 
 [繁體中文](README.md) ｜ [English](README.en.md) ｜ **日本語**
 
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%82%92%E3%81%94%E3%81%A1%E3%81%9D%E3%81%86-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/killnopig)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%82%92%E3%81%94%E3%81%A1%E3%81%9D%E3%81%86-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/jjptt1980)
 
 毎週の注射量、注射部位、体重などの健康データを記録し、グラフにするスマートフォン向けのシングルページ Web アプリです。すべての機能が `index.html` 1 ファイルに入っており、サーバーは不要です。
 
-**オンラインで使う:** https://killnopig.github.io/dose-tracker-sync/
+**オンラインで使う:** https://jjptt1980.github.io/dose-tracker-sync/
 
-> これは「同期版」で、[dose-tracker](https://github.com/killnopig/dose-tracker)（安定版 1.2）から独立したプロジェクトです。血圧と体組成、Omron CSV と Health Connect の取り込み、グラフ画像とテキスト要約、グラフのツールチップなどを追加しています。2 つのプロジェクトのデータとクラウドバックアップは完全に分かれています。
+> これは「同期版」で、[dose-tracker](https://github.com/JJptt1980/dose-tracker)（安定版 1.2）から独立したプロジェクトです。血圧と体組成、Omron CSV と Health Connect の取り込み、グラフ画像とテキスト要約、グラフのツールチップなどを追加しています。2 つのプロジェクトのデータとクラウドバックアップは完全に分かれています。
 
 > 本アプリは個人の記録と傾向確認のためのツールです。医療機器ではなく、診断・治療・用量の助言は行いません。下の「免責事項」を先にお読みください。
 
@@ -43,14 +43,15 @@
 
 ## Android APK（任意）
 
-Android APK もインストールできます。[Releases](https://github.com/killnopig/dose-tracker-sync/releases) から最新の `dose-tracker-sync-v2.0.0.apk` をダウンロードしてください。
+Android APK もインストールできます。[Releases](https://github.com/JJptt1980/dose-tracker-sync/releases) から最新の `dose-tracker-sync-v2.0.1.apk` をダウンロードしてください。
 
-- APK は `https://killnopig.github.io/dose-tracker-sync/` を読み込むだけの殻（Capacitor）です。サイトが更新されるとアプリの内容も自動で更新されるため、再インストールは不要です。実際のバージョンはアプリ上部のタイトル横に表示されます。
+- APK は `https://jjptt1980.github.io/dose-tracker-sync/` を読み込むだけの殻（Capacitor）です。サイトが更新されるとアプリの内容も自動で更新されるため、再インストールは不要です。実際のバージョンはアプリ上部のタイトル横に表示されます。
 - 開くにはネットワーク接続が必要です。
 - データは APK 内蔵のブラウザに保存され、Chrome の Web 版とは別です。アプリを削除するかデータを消去すると記録も消えるため、定期的にバックアップしてください。
 - Google Drive バックアップは作者のスマートフォンでのみ動作確認しています。
 - Chrome 版から APK に移すには、両方を同じ Google アカウントに接続して Drive から読み込むか、バックアップテキストを使います。
 - このビルドは debug 署名で、個人用のサイドロード専用です。「提供元不明のアプリ」を許可する必要があります。今後の APK 更新は同じ署名鍵が必要で、違う場合は先にアンインストールするため記録が消えます。
+- 2.0.0 から 2.0.1 への移行：サイトが新しいアドレスに移ったため、2.0.0 は開けなくなりました。2.0.1 はパッケージ名も変わったので上書きインストールできず、新旧両方のアプリが表示されます。2.0.1 で Google Drive に接続してデータを読み込み、確認してから旧アプリを削除してください。2.0.0 で Drive バックアップを使っていなかった場合は、まだ削除しないでください。Health Connect へのアクセスも新しいアプリで改めて許可する必要があります。
 
 ## Health Connect 同期（Android APK）
 
@@ -142,8 +143,8 @@ APK 内でのみ表示されます。Health Connect は Android のネイティ�
 
 ## 安定版 1.2 との関係
 
-- 安定版 1.2 は [dose-tracker](https://github.com/killnopig/dose-tracker)（`https://killnopig.github.io/dose-tracker/`）に残り、新機能は追加されません。
-- 同期版は独立したプロジェクト（`https://killnopig.github.io/dose-tracker-sync/`）で、バージョンは 2.0.0 から始まります。
+- 安定版 1.2 は [dose-tracker](https://github.com/JJptt1980/dose-tracker)（`https://jjptt1980.github.io/dose-tracker/`）に残り、新機能は追加されません。
+- 同期版は独立したプロジェクト（`https://jjptt1980.github.io/dose-tracker-sync/`）で、バージョンは 2.0.0 から始まります。
 - 両者は同じドメイン上にあるため、同期版は専用のローカルストレージキー（`dosetrack-v1-sync`）と専用の Drive バックアップファイル（`dose-tracker-sync.json`）を使い、1.2 のデータは読み書きしません。
 - Google ログイン画面と Health Connect の権限画面に表示されるプライバシーポリシーは、1.2 プロジェクトの `privacy.html` です。
 
